@@ -80,22 +80,22 @@ function test_input($data) {
 echo htmlspecialchars($_SERVER["PHP_SELF"]);
 ?>">
 
-            Name: <input type="text" name="name" class="<?= strlen($nameErr) != 0 ? "err" : ""; ?>">
+            Name: <input type="text" name="name" class="<?= strlen($nameErr) != 0 ? "err" : ""; ?>"value="<?= $name;?>">
             <span class="error">* <?= $nameErr; ?></span>
             <br><br>
             E-mail:
-            <input type="text" name="email" class="<?= strlen($emailErr) != 0 ? "err" : ""; ?>">
+            <input type="text" name="email" class="<?= strlen($emailErr) != 0 ? "err" : ""; ?>" value="<?= $name;?>">
             <span class="error">* <?= $emailErr; ?></span>
             <br><br>
             Website:
-            <input type="text" name="website">
+            <input type="text" name="website"  value="<?= $website;?>">
             <span class="error"><?= $websiteErr; ?></span>
             <br><br>
-            Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+            Comment: <textarea name="comment" rows="5" cols="40"> <?=$comment;?> </textarea>
             <br><br>
             Gender:
-            <input type="radio" name="gender" value="female" class="<?= strlen($genderErr) != 0 ? "err" : ""; ?>">Female
-            <input type="radio" name="gender" value="male" class="<?= strlen($genderErr) != 0 ? "err" : ""; ?>">Male
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female" class="<?= strlen($genderErr) != 0 ? "err" : ""; ?>">Female
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male" class="<?= strlen($genderErr) != 0 ? "err" : ""; ?>">Male
             <span class="error">* <?= $genderErr; ?></span>
             <br><br>
             <input type="submit" name="submit" value="Submit"> 
