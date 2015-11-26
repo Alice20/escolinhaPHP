@@ -3,4 +3,4 @@
 $host = 'localhost';
 $dbname = 'escolinha';
 $username = 'root';
-$password = '';
+$password = '123';
