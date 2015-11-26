@@ -1,6 +1,9 @@
 <?php
 //Faz a requisição de dados paraconexão com o BD
-require_once 'dbconfig.php';
+if($_SERVER['SERVER_ADDR'] == '127.0.0.1')
+    require_once 'dbconfig.php';
+else
+    require_once 'dbconfigHstinger.php';
 //Inclusão da função que envia e-mail
 include_once 'emailConfirma.php';
 /*
